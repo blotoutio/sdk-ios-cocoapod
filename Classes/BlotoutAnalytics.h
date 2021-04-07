@@ -58,4 +58,34 @@
  */
 -(nullable NSString*)getUserId;
 
+/*!
+ Enable the sending of analytics data. Enabled by default.
+ */
+- (void)enable;
+
+/*!
+ Completely disable the sending of any analytics data.
+ */
+- (void)disable;
+
+//Enable SDK Log Information
+@property (nonatomic, readwrite) BOOL enableSDKLog;
+
+//Application leval methods handling
+
+// called when user will received any notification
+- (void)receivedRemoteNotification:(NSDictionary *_Nullable)userInfo;
+
+// called when device failed to register for remote notification
+- (void)failedToRegisterForRemoteNotificationsWithError:(NSError *_Nullable)error;
+
+// called when device register for remote notification
+- (void)registeredForRemoteNotificationsWithDeviceToken:(NSData *_Nullable)deviceToken;
+
+// called when device has detect user activity
+- (void)continueUserActivity:(NSUserActivity *_Nonnull)activity;
+
+// called when device has detect openUrl in case of deep link
+- (void)openURL:(NSURL *_Nullable)url options:(NSDictionary *_Nonnull)options;
+
 @end
