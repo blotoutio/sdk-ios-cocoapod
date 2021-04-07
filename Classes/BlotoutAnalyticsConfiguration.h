@@ -34,12 +34,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  * Application token that you can get in your dashboard
-*/
+ */
 @property (nonatomic, copy, readonly, nonnull) NSString *token;
 
 /**
  * Url where you will be sending data
-*/
+ */
 @property (nonatomic, copy, readonly, nonnull) NSString *endPointUrl;
 
 /**
@@ -56,12 +56,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) NSTimeInterval flushInterval;
 
 /**
- * The maximum number of items to queue before starting to drop old ones. This should be a value greater than zero, the behaviour is undefined otherwise. `1000` by default.
- */
-@property (nonatomic, assign) NSUInteger maxQueueSize;
-
-/**
- * Set a custom crypto
+ * Set a your own implementation for encrption/decryption local data.
  */
 @property (nonatomic, strong, nullable) id<BOACrypto> crypto;
 
@@ -81,7 +76,9 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (nonatomic, assign) BOOL trackPushNotifications;
 
-
+/**
+ * Whether the blotout analytics client should  track deep links.
+ */
 @property (nonatomic, assign) BOOL trackDeepLinks;
 
 /**
