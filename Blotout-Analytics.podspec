@@ -22,7 +22,7 @@ Pod::Spec.new do |spec|
   spec.source_files   = 'Classes/**/*'
   spec.public_header_files = 'Classes/**/*.h'
   spec.vendored_libraries = 'Classes/libBlotoutAnalytics.a'
-  spec.platform = :ios, '9.0'
+  spec.platform = :ios, '12.0'
   spec.static_framework = true
 
   # This description is used to generate tags and improve search results.
